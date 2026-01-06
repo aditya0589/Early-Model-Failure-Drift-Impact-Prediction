@@ -36,7 +36,3 @@ ENV/
 *.swp
 *.swo
 
-# Project Outputs (Drift Pipeline)
-*.csv
-*.png
-
