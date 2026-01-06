@@ -39,6 +39,4 @@ ENV/
 # Project Outputs (Drift Pipeline)
 *.csv
 *.png
-drift_simulation_data.csv
-drift_metrics.csv
-drift_report.png
+
