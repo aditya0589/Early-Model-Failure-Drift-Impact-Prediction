@@ -5,31 +5,7 @@ This project implements a production-grade MLOps system to predict whether a cus
 1.  **Primary Model**: Customer Churn Prediction (XGBoost)
 2.  **Meta Model**: Failure Predictor (Logistic Regression) based on drift metrics.
 
-## Architecture
-```mermaid
-graph TD
-    A[Raw Data] --> B[Data Loader]
-    B --> C[Reference Data (Train/Val/Test)]
-    C --> D[Train Churn Model]
-    D --> E[Churn Model Artifact]
-    
-    C --> F[Drift Simulator]
-    E --> F
-    F --> G[Simulated Batches (Drifted)]
-    
-    G --> H[Drift Detection Engine]
-    H --> I[Drift Metrics (PSI, KS, JS)]
-    
-    G --> J[Ground Truth Eval]
-    J --> K[Performance Drop]
-    
-    I --> L[Failure Label Generator]
-    K --> L
-    L --> M[Failure Training Data]
-    
-    M --> N[Train Failure Predictor]
-    N --> O[Failure Model Artifact]
-```
+
 
 ## Directory Structure
 ```
@@ -80,3 +56,4 @@ python run_pipeline.py --step train_failure
 - `06_failure_model_experiments.ipynb`: Meta-model performance.
 - `07_threshold_sensitivity.ipynb`: Threshold tuning.
 - `08_end_to_end_pipeline_demo.ipynb`: Final demo.
+
